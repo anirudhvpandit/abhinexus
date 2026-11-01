@@ -1,0 +1,47 @@
+{
+  "name": "abhinexus",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"node --env-file-if-exists=.env server/index.js\" \"vite --host 0.0.0.0 --port 5173\"",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "db:migrate": "node --env-file-if-exists=.env server/migrate.js",
+    "db:seed:demo": "node --env-file-if-exists=.env server/seed-demo.js",
+    "db:seed:demo:reset": "node --env-file-if-exists=.env server/seed-demo.js --reset",
+    "db:backup": "node --env-file-if-exists=.env server/backup.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^7.0.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@tanstack/react-query": "^5.105.1",
+    "better-sqlite3": "^12.11.1",
+    "clsx": "^2.1.1",
+    "concurrently": "^9.2.5",
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.2",
+    "helmet": "^8.3.0",
+    "lucide-react": "^1.66.0",
+    "morgan": "^1.12.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-hook-form": "^7.91.0",
+    "recharts": "^3.10.1",
+    "tailwindcss": "^4.3.3",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.89.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.5"
+  }
+}
